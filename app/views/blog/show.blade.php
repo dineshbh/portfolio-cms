@@ -1,7 +1,7 @@
 @extends('layouts.blog')
 @section('content')
 <article>
-	<h3><a href ={{ route('blog.show', $post->id) }}>{{$post->title}}</a></h3>
+	<h3>{{ link_to_route('blog.show', $post->title, $post->id) }}</h3>
         <h6>Written by <a href="#">John McLachlan</a> on {{{ $post->created_at }}}</h6>
         <h6>
           @foreach ($categories as $category)

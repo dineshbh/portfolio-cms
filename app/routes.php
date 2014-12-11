@@ -24,7 +24,7 @@ Route::get('/', 'BlogController@index');
 Route::get('blog/category/{category_id}', array('as' => 'category_view', 'uses'=>'BlogController@getByCat'));
 
 
-Route::resource('posts', 'PostsController');
+Route::resource('admin/posts', 'PostsController');
 
 Route::get('admin/posts', 'PostsController@index');
 

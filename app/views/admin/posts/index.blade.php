@@ -1,5 +1,6 @@
 @extends('layouts.admin')
 @section('content')
+{{ link_to_route('admin.posts.create', 'Create New Post', null, ['class' => 'success button']) }}
 <h2 class="post-listings">Post listings</h2><hr>
 <table>
     <thead>
@@ -14,9 +15,9 @@
         @foreach($posts as $post)
             <tr>
                 <td>{{$post->title}}</td>
-                <td>{{HTML::linkRoute('posts.edit','Edit',$post->id)}}</td>
-                <td>{{HTML::linkRoute('posts.destroy','Delete',$post->id)}}</td>
-                <td>{{HTML::linkRoute('posts.show','View',$post->id,['target'=>'_blank'])}}</td>
+                <td>{{HTML::linkRoute('admin.posts.edit','Edit',$post->id)}}</td>
+                <td>{{HTML::linkRoute('admin.posts.destroy','Delete',$post->id)}}</td>
+                <td>{{HTML::linkRoute('admin.posts.show','View',$post->id,['target'=>'_blank'])}}</td>
             </tr>
         @endforeach
     </tbody>

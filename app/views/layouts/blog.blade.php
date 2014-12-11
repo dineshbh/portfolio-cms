@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="row">
-    @include('partials._header') 
+    @include('blog.partials._header') 
   </div>
  
   <div class="row">
@@ -24,12 +24,12 @@
   
  
  <aside class="large-3 columns">
-  @include('partials._sidebar')   
+  @include('blog.partials._sidebar')   
  </aside>
  </div>
   
   <footer class="row">
-    @include('partials._footer') 
+    @include('blog.partials._footer') 
   </footer>
   
     {{ HTML::script('js/vendor/jquery.js')}}

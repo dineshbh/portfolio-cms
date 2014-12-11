@@ -10,6 +10,7 @@
         {{ HTML::style('css/foundation.css') }}
         {{ HTML::style('css/custom.css') }}
         {{ HTML::script('js/vendor/modernizr.js')}}
+        {{ HTML::script('js/ckeditor/ckeditor.js')}}
 		
 </head>
 <body>
@@ -20,23 +21,28 @@
     </div>
 
     <div class="large-9 columns">
-        @include('partials._admin-login') 
+        @include('admin.partials._admin-login') 
     </div>
   </div>
 
   <div class="row">     
     <div class="large-9 push-3 columns">
+        @if (Session::has('message'))
+        <div class="alert-box success">
+            {{{ Session::get('message') }}}
+        </div>
+      @endif
       @yield('content')  
     </div>
     
     <div class="large-3 pull-9 columns">
-        @include('partials._admin-nav') 
+        @include('admin.partials._admin-nav') 
     </div>
 
   </div>
    
   <footer class="row">
-      @include('partials._admin-footer') 
+      @include('admin.partials._admin-footer') 
   </footer>
   
     {{ HTML::script('js/vendor/jquery.js')}}
