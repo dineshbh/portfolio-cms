@@ -6,3 +6,15 @@
 #cke_content {
 	margin-bottom: 1rem;
 }
+
+button, .button {
+	margin-bottom: 0rem;
+}
+
+.side-nav li a {
+	background-color: rgba(210, 230, 240, 1);
+}
+
+.side-nav {
+	padding-top: 0rem;
+}

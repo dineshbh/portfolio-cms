@@ -1,23 +1,16 @@
 @extends('layouts.admin')
 @section('content')
-{{ link_to_route('admin.posts.create', 'Create New Post', null, ['class' => 'success button']) }}
+{{ link_to_route('admin.posts.create', 'Create New Post', null, ['class' => 'button']) }}
 <h2 class="post-listings">Post listings</h2><hr>
 <table>
-    <thead>
-    <tr>
-        <th width="300">Post Title</th>
-        <th width="120">Post Edit</th>
-        <th width="120">Post Delete</th>
-        <th width="120">Post View</th>
-    </tr>
-    </thead>
     <tbody>
         @foreach($posts as $post)
             <tr>
-                <td>{{$post->title}}</td>
-                <td>{{HTML::linkRoute('admin.posts.edit','Edit',$post->id)}}</td>
-                <td>{{HTML::linkRoute('admin.posts.destroy','Delete',$post->id)}}</td>
-                <td>{{HTML::linkRoute('admin.posts.show','View',$post->id,['target'=>'_blank'])}}</td>
+                <td width = 100%>{{link_to_route('admin.posts.show',$post->title,$post->id)}}</td>
+                <td>{{link_to_action('PostsController@edit','Edit',$post->id,['class' => 'tiny button'])}}</td>
+                {{ Form::model($post, array('action' => ['PostsController@destroy', $post->id], 'method' => 'delete')) }}
+                <td>{{ Form::button('Delete', ['type' => 'submit', 'class' => 'tiny alert button']) }}</td> 
+                {{ Form::close() }}
             </tr>
         @endforeach
     </tbody>

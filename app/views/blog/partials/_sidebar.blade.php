@@ -1,5 +1,3 @@
-
- 
       <h5>Categories</h5>
       <ul class="side-nav">
 

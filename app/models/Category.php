@@ -1,8 +1,8 @@
 <?php
 
 class Category extends Eloquent {
- 
-    public function category()
+
+    public function post()
     {
         return $this->belongsTo('Post');
     }

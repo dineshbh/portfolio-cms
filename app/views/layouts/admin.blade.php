@@ -8,25 +8,30 @@
         with the correctr root relative paths -->
         {{ HTML::style('css/normalize.css') }}
         {{ HTML::style('css/foundation.css') }}
+        <link type="text/css" media="screen" rel="stylesheet" href="css/responsive-tables.css" />
         {{ HTML::style('css/custom.css') }}
         {{ HTML::script('js/vendor/modernizr.js')}}
         {{ HTML::script('js/ckeditor/ckeditor.js')}}
+        {{ HTML::script('js/ckeditor/responsive-tables.js')}}
 		
 </head>
 <body>
   
   <div class="row">
-    <div class="large-3 columns">
+    <div class="large-3 medium-3 columns">
       <h1>Dashboard</h1>
     </div>
 
-    <div class="large-9 columns">
+    <div class="large-9 medium-9 columns">
         @include('admin.partials._admin-login') 
     </div>
   </div>
 
-  <div class="row">     
-    <div class="large-9 push-3 columns">
+  <div class="row">  
+      <div class="large-3 medium-3 columns">
+        @include('admin.partials._admin-nav') 
+      </div>
+    <div class="large-9 medium-9 columns">
         @if (Session::has('message'))
         <div class="alert-box success">
             {{{ Session::get('message') }}}
@@ -34,11 +39,11 @@
       @endif
       @yield('content')  
     </div>
-    
-    <div class="large-3 pull-9 columns">
-        @include('admin.partials._admin-nav') 
-    </div>
 
+
+
+  
+    
   </div>
    
   <footer class="row">

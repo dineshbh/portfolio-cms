@@ -22,7 +22,8 @@ class PostsController extends \BaseController {
 	public function create()
 	{
 		$categories = Category::lists('category', 'id');
-		return View::make('admin.posts.create')->withCategories($categories);
+		$category = array();
+		return View::make('admin.posts.create')->withCategory($category)->withCategories($categories);
 	}
 
 
@@ -35,7 +36,8 @@ class PostsController extends \BaseController {
 	{
 		// create rules list
 		$rules = array (
-				'title' => array ('required', 'unique:posts,title') 
+				'title' => array ('required', 'unique:posts,title'),
+				'category' => array ('required', 'exists:categories,id') 
 			);
 
 		// use laravel validator class to check if rules are met
@@ -81,7 +83,10 @@ class PostsController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$post = Post::findOrFail($id);
+		$categories = Category::lists('category', 'id');
+		$category = $post->category_id;
+		return View::make('admin.posts.edit')->withPost($post)->withCategory($category)->withCategories($categories);
 	}
 
 
@@ -93,7 +98,30 @@ class PostsController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+				// create rules list
+		$rules = array (
+				'title' => array ('required', 'unique:posts,title'),
+				'category' => array ('required', 'exists:categories,id') 
+			);
+
+		// use laravel validator class to check if rules are met
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()) {
+			// redirect and pass errors and input back to view
+			return Redirect::route('admin.posts.edit')->withErrors($validator)->withInput();
+		}
+
+		// save data in database
+		$title = Input::get('title');
+		$category = Input::get('category');
+		$content = Input::get('content');
+		$post = Post::findOrFail($id);
+		$post->title = $title;
+		$post->category_id = $category;
+		$post->content = $content;
+		$post->update();
+		// adds message to laravel $ession object to be retrieved anywhere on the site
+		return Redirect::route('admin.posts.index')->withMessage('Post was updated!');
 	}
 
 
@@ -105,7 +133,8 @@ class PostsController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$post = POst::findOrFail($id)->delete();
+		return Redirect::route('admin.posts.index')->withMessage('Post was deleted!');
 	}
 
 
