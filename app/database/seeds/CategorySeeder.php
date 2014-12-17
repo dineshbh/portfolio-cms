@@ -6,9 +6,9 @@ class CategorySeeder extends Seeder {
     {
         for( $i = 1 ; $i <= 10 ; $i++ ) 
         {
-            $post = new Category;
-            $post->category = "Category $i";
-            $post->save();
+            $category = new Category;
+            $category->category = "Category $i";
+            $category->save();
         }
     }
 }

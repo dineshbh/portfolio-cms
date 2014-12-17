@@ -1,3 +1,3 @@
 <ul class="inline-list right">
-	<li><a href="#">Log In</a></li>
+	<li>{{ link_to_action('AdminController@getLogout', 'Log Out') }}</li>
 </ul>

@@ -10,6 +10,7 @@
         {{ HTML::style('css/foundation.css') }}
         {{ HTML::style('css/custom.css') }}
         {{ HTML::script('js/vendor/modernizr.js')}}
+        {{ HTML::style('foundation-icons/foundation-icons.css')}}
 		
 </head>
 <body>
@@ -28,13 +29,10 @@
  </aside>
  </div>
   
-  <footer class="row">
     @include('blog.partials._footer') 
-  </footer>
   
     {{ HTML::script('js/vendor/jquery.js')}}
     {{ HTML::script('js/foundation.min.js')}}
-    {{ HTML::script('js/app.js')}}
     <script>
       $(document).foundation();
     </script>

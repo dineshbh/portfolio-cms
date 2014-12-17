@@ -8,11 +8,9 @@
         with the correctr root relative paths -->
         {{ HTML::style('css/normalize.css') }}
         {{ HTML::style('css/foundation.css') }}
-        <link type="text/css" media="screen" rel="stylesheet" href="css/responsive-tables.css" />
         {{ HTML::style('css/custom.css') }}
         {{ HTML::script('js/vendor/modernizr.js')}}
         {{ HTML::script('js/ckeditor/ckeditor.js')}}
-        {{ HTML::script('js/ckeditor/responsive-tables.js')}}
 		
 </head>
 <body>
@@ -52,7 +50,6 @@
   
     {{ HTML::script('js/vendor/jquery.js')}}
     {{ HTML::script('js/foundation.min.js')}}
-    {{ HTML::script('js/app.js')}}
     <script>
       $(document).foundation();
     </script>
