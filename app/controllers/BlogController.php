@@ -24,5 +24,8 @@ class BlogController extends \BaseController {
 		return View::make('blog.single')->withPosts($posts)->withCategories($categories)->withComments($comments);
 	}
 
+	public function store($id) 
+	{
 
+	}
 }
