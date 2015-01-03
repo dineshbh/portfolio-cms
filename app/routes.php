@@ -18,12 +18,11 @@ Route::post('/admin/login', 'AdminController@postLogin');
 
 Route::get('/admin/logout', 'AdminController@getLogout');
 
-Route::resource('blog', 'BlogController');
-
 Route::get('/', 'BlogController@index');
 
 Route::get('blog/category/{category_id}', array('as' => 'category_view', 'uses'=>'BlogController@getByCat'));
 
+Route::resource('blog', 'BlogController');
 
 Route::resource('admin/posts', 'PostsController');
 

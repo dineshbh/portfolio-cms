@@ -1,13 +1,12 @@
 @extends('layouts.blog')
 @section('content')
-{{ $posts->links() }}
 @foreach ($posts as $post)
 <article>
 <h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
-	<h3>{{ link_to_action('BlogController@show', strtoupper($post->title), $post->id) }}</h3>
+	<h3>{{ link_to_route('blog.index', strtoupper($post->title), $post->id) }}</h3>
         <div class="row">
           <div class="large-12 columns">
-            {{ str_limit($post->content, $limit = 800, $end = '...') }}
+            {{ $post->content }}
             <ul>
              @foreach ($categories as $category)
             @if ($category->id == $post->category_id)
@@ -19,4 +18,5 @@
         </div>
     </article>
 @endforeach
+@include('blog.partials._comments')
 @stop

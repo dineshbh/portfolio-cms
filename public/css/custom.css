@@ -11,10 +11,6 @@ button, .button {
 	margin-bottom: 0rem;
 }
 
-.side-nav li a {
-	background-color: rgba(210, 230, 240, 1);
-}
-
 .side-nav {
 	padding-top: 0rem;
 }
@@ -31,39 +27,26 @@ button, .button {
 
 /* Footer */
 .full-width {
-  max-width: 1400px;
+  width: 100%;
 }
 
 .footer {
-  background-color: #2980b9;
-  padding: 2rem 4rem;
-  text-align: center;
-  color: #fff;
-}
-.footer i {
-  font-size: 100px;
+  text-align: left;
 }
 
 .footer h4 {
-  color: #fff;
+  color: gray;
   font-size: 1em;
   font-weight: 400;
   text-transform: uppercase;
-  margin-top: 2.5rem;
   margin-bottom: 10px;
 }
 .footer p, .footer a {
   font-weight: 300;
   font-size: .8em;
-  color: #fff;
+  color: gray;
 }
 
-@media only screen and (min-width: 40.063em) {
-  .footer .columns:nth-child(n+2) {
-    border-left: 1px solid #b3b3b3;
-    min-height: 280px;
-  }
-}
 .footer-links {
   list-style-type: none;
 }

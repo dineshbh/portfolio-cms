@@ -2,7 +2,7 @@
       <hr/>
       <div class="row">
         <div class="large-6 columns">
-          <p>© Copyright no one at all. Go to town.</p>
+          <p>© Copyright 2014 | John McLachlan</p>
         </div>
       </div>
     </div> 

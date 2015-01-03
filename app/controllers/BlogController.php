@@ -2,11 +2,6 @@
 
 class BlogController extends \BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{	
 		$categories = Category::all();
@@ -21,17 +16,12 @@ class BlogController extends \BaseController {
 		return View::make('blog.index')->withPosts($posts)->withCategories($categories);
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	public function show($id) 
 	{
-		$post = Post::findOrFail($id);
+		$comments = Comment::all();
+		$posts = Post::where('id', $id)->get();
 		$categories = Category::all();
-		return View::make('blog.show')->withPost($post)->withCategories($categories);
+		return View::make('blog.single')->withPosts($posts)->withCategories($categories)->withComments($comments);
 	}
 
 

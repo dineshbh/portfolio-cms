@@ -1,5 +1,5 @@
-@extends('layouts.blog')
-@section('content')
+{{{ 'show' }}}
+{{--
 <article>
 	<h3>{{ link_to_route('blog.show', $post->title, $post->id) }}</h3>
         <h6>Written by <a href="#">John McLachlan</a> on {{{ $post->created_at }}}</h6>
@@ -18,4 +18,8 @@
           </div>
         </div>
     </article>
-@stop
+}
+}
+}
+}
+--}}
