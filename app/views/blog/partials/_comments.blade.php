@@ -1,23 +1,28 @@
 <div id="respond">
-
-  <h3>Leave a Comment</h3>
-{{ Form::open( array ('action' => 'BlogController@store')) }}
-  <div class="row">
-<div class="large-6 columns">
-{{ Form::label('Name') }}
-{{ Form::text('commenter') }}
-</div>
-<div class="large-6 columns">
-{{ Form::label('email') }}
-{{ Form::text('email') }}
-</div>
-<div class="large-12 columns">
-{{ Form::label('comment') }}
-{{ Form::textarea('comment', null, ['size' => '30x5']) }}
-  {{ Form::submit('Create', array('class' => 'button')) }}
-  {{ Form::close() }}
+@if (Session::has('message'))
+  <div class="alert-box success">
+  {{{ Session::get('message') }}}
   </div>
-
+@endif
+  <h3>Leave a Comment</h3>
+  {{ Form::open( array ('action' => 'BlogController@store')) }}
+  <div class="row">
+    <div class="large-6 columns">
+      {{ Form::label('Name') }}
+      {{ Form::text('commenter') }}
+    </div>
+    <div class="large-6 columns">
+      {{ Form::label('email') }}
+      {{ Form::text('email') }}
+    </div>
+    <div class="large-12 columns">
+      {{ Form::label('comment') }}
+      {{ Form::textarea('comment', null, ['size' => '30x5']) }}
+      {{ Form::hidden('post_id', $post->id) }}
+      {{ Form::submit('Create', array('class' => 'button')) }}
+      {{ Form::close() }}
+    </div>
+  </div>
 </div>
 
 <ol id="posts-list">

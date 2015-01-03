@@ -17,6 +17,6 @@
           </div>
         </div>
     </article>
-@endforeach
 @include('blog.partials._comments')
+@endforeach
 @stop
