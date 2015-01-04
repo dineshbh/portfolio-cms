@@ -34,10 +34,7 @@ Route::get('admin/posts', 'PostsController@index')->before('auth');
 Route::resource('admin/users', 'UserController');
 
 
-
-Route::get('admin/comments/approved', 'CommentController@approved')->before('auth');
-
-Route::get('admin/comments/unapproved', 'CommentController@unapproved')->before('auth');
+Route::get('admin/comments/all/', 'CommentController@index')->before('auth');
 
 Route::put('admin/comments/{id}', 'CommentController@approve')->before('auth');
 

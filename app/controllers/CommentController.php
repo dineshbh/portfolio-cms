@@ -16,23 +16,8 @@ public function __construct() {
 		$posts = Post::all();
 		$commentsapp = Comment::orderBy('created_at','desc')->where('approved', '=', '1')->paginate(10);
 		$commentsunapp = Comment::orderBy('created_at','desc')->where('approved', '=', '0')->paginate(10);
-		return View::make('admin.comments.unapproved')->withPosts($posts)->withCommentsapp($commentsapp)->withCommentsunapp($commentsunapp);
+		return View::make('admin.comments.index')->withPosts($posts)->withCommentsapp($commentsapp)->withCommentsunapp($commentsunapp);
 	}
-
-		public function approved()
-	{
-		$posts = Post::all();
-		$commentsapp = Comment::orderBy('created_at','desc')->where('approved', '=', '1')->paginate(10);
-		return View::make('admin.comments.approved')->withPosts($posts)->withCommentsapp($commentsapp);
-	}
-
-		public function unapproved()
-	{
-		$posts = Post::all();
-		$commentsunapp = Comment::orderBy('created_at','desc')->where('approved', '=', '0')->paginate(10);
-		return View::make('admin.comments.unapproved')->withPosts($posts)->withCommentsunapp($commentsunapp);
-	}
-
 
 	/**
 	 * Show the form for creating a new resource.
@@ -109,18 +94,18 @@ public function __construct() {
 		$comment = Comment::findOrFail($id);
 		if (Input::get('approved') == 1)
 		{
-			$approved = '1';
-			$comment->approved = $approved;
-			$comment->update();
-			// adds message to laravel $ession object to be retrieved anywhere on the site
-			return Redirect::back()->withMessage('Comment was approved!');
-		}
-		else {
 			$approved = '0';
 			$comment->approved = $approved;
 			$comment->update();
 			// adds message to laravel $ession object to be retrieved anywhere on the site
 			return Redirect::back()->withMessage('Comment was unapproved!');
+		}
+		else {
+			$approved = '1';
+			$comment->approved = $approved;
+			$comment->update();
+			// adds message to laravel $ession object to be retrieved anywhere on the site
+			return Redirect::back()->withMessage('Comment was approved!');
 		}
 	}
 

@@ -13,7 +13,7 @@
         </tr>
 	<tr>
     <td width =80%>
-        {{ $comment->commenter }} said on {{ date("jS M Y", strtotime($comment->created_at)) }}<br/>
+        {{ $comment->commenter }} said on {{ date("jS M Y", strtotime($comment->created_at)) }} at {{ date("g:i", strtotime($comment->created_at)) }}<br/>
         {{ $comment->comment }}
         </td>
     @foreach($posts as $post)
@@ -23,7 +23,7 @@
     @endforeach
     <td>
     {{ Form::model($comment, array('action' => ['CommentController@approve', $comment->id], 'method' => 'PUT')) }}
-    {{ Form::hidden('approved', $approve) }}
+    {{ Form::hidden('approved', $approved) }}
     {{ Form::submit($button_text, array('class' => 'tiny button')) }}
     {{ Form::close() }}
     </td>

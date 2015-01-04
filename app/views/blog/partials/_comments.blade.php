@@ -46,7 +46,8 @@
 
         <div class="entry-content">
         <a class="url fn" href="#"><?php echo($comment['commenter']); ?></a> said on 
-        {{{ date('d F Y', strtotime($comment['created_at'])) }}}
+        {{{ date('d F Y', strtotime($comment['created_at'])) }}} at 
+        {{{ date("g:i", strtotime($comment->created_at)) }}}
           <p><?php echo($comment['comment']); ?></p>
         </div>
       </article>
