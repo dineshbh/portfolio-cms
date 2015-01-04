@@ -15,6 +15,13 @@ button, .button {
 	padding-top: 0rem;
 }
 
+td p {
+  font-size:0.8em;
+}
+
+#cke_comment {
+  margin-bottom: 1rem;
+}
 
 /* Sign Up Form
 /* Styles for signup panels */
@@ -52,5 +59,11 @@ button, .button {
 }
 .footer-links li {
   margin-top: .5em;
+}
+
+.tabs dd.active a, .tabs .tab-title.active a {
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
 }
          

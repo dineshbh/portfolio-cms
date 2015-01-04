@@ -18,6 +18,13 @@
     <div class="large-12 columns">
       {{ Form::label('comment') }}
       {{ Form::textarea('comment', null, ['size' => '30x5']) }}
+      <script type="text/javascript">
+        CKEDITOR.replace( 'comment', {
+          resize_enabled: false,
+          removePlugins: 'toolbar,elementspath',
+          removeButtons: 'Anchor,Underline,Strike,Subscript,Superscript,Image',
+        } );
+      </script>
       {{ Form::hidden('post_id', $post->id) }}
       {{ Form::submit('Create', array('class' => 'button')) }}
       {{ Form::close() }}
