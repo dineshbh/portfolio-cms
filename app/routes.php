@@ -27,18 +27,22 @@ Route::post('/admin/login', 'AdminController@postLogin');
 
 Route::get('/admin/logout', 'AdminController@getLogout');
 
+
 Route::resource('admin/posts', 'PostsController');
 
 Route::get('admin/posts', 'PostsController@index')->before('auth');
+
 
 Route::resource('admin/users', 'UserController');
 
 
 Route::get('admin/comments/all/', 'CommentController@index')->before('auth');
 
+Route::get('admin/comments/{id}', array('as' => 'post_comments', 'uses'=>'CommentController@getByPost'))->before('auth');
+
 Route::put('admin/comments/{id}', 'CommentController@approve')->before('auth');
 
-Route::resource('admin/comments', 'CommentController');
+Route::delete('admin/comments/{id}', 'CommentController@destroy')->before('auth');
 
 
 // listens for any query passed to database for debugging

@@ -6,11 +6,6 @@ public function __construct() {
     $this->beforeFilter('csrf', array('on'=>'post'));
 }
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
 		$posts = Post::all();
@@ -19,70 +14,15 @@ public function __construct() {
 		return View::make('admin.comments.index')->withPosts($posts)->withCommentsapp($commentsapp)->withCommentsunapp($commentsunapp);
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
+	public function getByPost($id)
 	{
-		//
+		$getByPost = 1;
+		$posts = Post::where('id', $id)->get();
+		$commentsapp = Comment::orderBy('created_at','desc')->where('approved', '=', '1')->where('post_id', '=', $id)->paginate(10);
+		$commentsunapp = Comment::orderBy('created_at','desc')->where('approved', '=', '0')->where('post_id', '=', $id)->paginate(10);
+		return View::make('admin.comments.index')->withPosts($posts)->withCommentsapp($commentsapp)->withCommentsunapp($commentsunapp)->with('getByPost', $getByPost);
 	}
 
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
 	public function destroy($id)
 	{
 		$comment = Comment::findOrFail($id)->delete();

@@ -18,7 +18,7 @@
         </td>
     @foreach($posts as $post)
         @if ($comment->post_id == $post->id)
-            <td width = 20%>{{link_to_route('admin.posts.show',$post->title,$post->id)}}</td>
+            <td width = 20%>{{link_to_route('post_comments',$post->title,$post->id)}}</td>
         @endif
     @endforeach
     <td>
