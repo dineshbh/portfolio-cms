@@ -9,7 +9,9 @@ class GalleryController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$images = Gallery_Image::orderBy('id','desc')->paginate(10);
+		$categories = Gallery_Category::all();
+		return View::make('admin.gallery.index')->withImages($images)->withCategories($categories);
 	}
 
 

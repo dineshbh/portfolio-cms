@@ -1,20 +1,25 @@
 @extends('layouts.admin')
 @section('content')
-{{ link_to_route('admin.posts.create', 'Create New Post', null, ['class' => 'button']) }}
-<h2 class="post-listings">Post listings</h2><hr>
+{{ link_to_route('admin.gallery.create', 'Create New Gallery Item', null, ['class' => 'button']) }}
+<h2 class="gallery-listings">Gallery listings</h2><hr>
 <table>
     <tbody>
-        @foreach($posts as $post)
+        @foreach($images as $image)
             <tr>
-                <td width = 70%>{{link_to_route('admin.posts.show',$post->title,$post->id)}}</td>
-                <td width = 30%>{{link_to_route('post_comments','View Comments',$post->id)}}</td>
-                <td>{{link_to_action('PostsController@edit','Edit',$post->id,['class' => 'tiny button'])}}</td>
-                {{ Form::model($post, array('action' => ['PostsController@destroy', $post->id], 'method' => 'delete')) }}
+                <td width = 30%>{{ $image->title }}</td>
+                    @foreach ($categories as $category)
+                    @if ($image->category_id == $category->id)
+                        <td width = 30%>{{ $category->category }} </td>
+                    @endif
+                @endforeach
+                <td width = 30%>{{ $image->image_link }} </td>
+                <td>{{link_to_action('GalleryController@edit','Edit',$image->id,['class' => 'tiny button'])}}</td>
+                {{ Form::model($image, array('action' => ['GalleryController@destroy', $image->id], 'method' => 'delete')) }}
                 <td>{{ Form::button('Delete', ['type' => 'submit', 'class' => 'tiny alert button']) }}</td> 
                 {{ Form::close() }}
             </tr>
         @endforeach
     </tbody>
 </table>
-{{$posts->links()}}
+{{$images->links()}}
 @stop
