@@ -45,6 +45,9 @@ Route::put('admin/comments/{id}', 'CommentController@approve')->before('auth');
 Route::delete('admin/comments/{id}', 'CommentController@destroy')->before('auth');
 
 
+Route::resource('admin/gallery', 'GalleryController');
+
+
 // listens for any query passed to database for debugging
 Event::listen('illuminate.query', function($query) {
 	//var_dump($query);

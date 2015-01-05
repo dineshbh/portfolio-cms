@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder {
 		$this->call('CategorySeeder');
 		$this->call('PostCommentSeeder');
 		$this->call('UserSeeder');
+		$this->call('GalleryCategorySeeder');
+		$this->call('GallerySeeder');
 	}
 
 }
