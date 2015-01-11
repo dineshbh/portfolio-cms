@@ -4,22 +4,22 @@
 <h2 class="gallery-listings">Gallery listings</h2><hr>
 <table>
     <tbody>
-        @foreach($images as $image)
+        @foreach($galleryitems as $galleryitem)
             <tr>
-                <td width = 30%>{{ $image->title }}</td>
+                <td width = 30%>{{ $galleryitem->title }}</td>
                     @foreach ($categories as $category)
-                    @if ($image->category_id == $category->id)
+                    @if ($galleryitem->category_id == $category->id)
                         <td width = 30%>{{ $category->category }} </td>
                     @endif
                 @endforeach
-                <td width = 30%>{{ $image->image_link }} </td>
-                <td>{{link_to_action('GalleryController@edit','Edit',$image->id,['class' => 'tiny button'])}}</td>
-                {{ Form::model($image, array('action' => ['GalleryController@destroy', $image->id], 'method' => 'delete')) }}
+                <td width = 30%>{{ $galleryitem->image_link }} </td>
+                <td>{{link_to_action('GalleryController@edit','Edit',$galleryitem->id,['class' => 'tiny button'])}}</td>
+                {{ Form::model($galleryitem, array('action' => ['GalleryController@destroy', $galleryitem->id], 'method' => 'delete')) }}
                 <td>{{ Form::button('Delete', ['type' => 'submit', 'class' => 'tiny alert button']) }}</td> 
                 {{ Form::close() }}
             </tr>
         @endforeach
     </tbody>
 </table>
-{{$images->links()}}
+{{$galleryitems->links()}}
 @stop

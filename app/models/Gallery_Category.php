@@ -4,9 +4,9 @@ class Gallery_Category extends Eloquent {
 
 	protected $table = 'gallery_categories';
 
-    public function Gallery_Image()
+    public function Gallery_Item()
     {
-        return $this->belongsTo('Gallery_Image');
+        return $this->belongsTo('Gallery_Item');
     }
  
 }

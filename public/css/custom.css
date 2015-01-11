@@ -66,4 +66,22 @@ td p {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }
-         
+
+        
+/*********** UPLOADER ***********/
+.step2, .error {
+    display: none;
+}
+.error {
+    font-size: 18px;
+    font-weight: bold;
+    color: red;
+}
+.info {
+    font-size: 14px;
+}
+
+.thumb {
+    max-width:350px;
+    height:auto;
+  }

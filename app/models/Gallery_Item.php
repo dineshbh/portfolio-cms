@@ -1,6 +1,6 @@
 <?php
 
-class Gallery_Image extends Eloquent {
+class Gallery_Item extends Eloquent {
 
 	protected $table = 'gallery';
     

@@ -45,6 +45,9 @@ Route::put('admin/comments/{id}', 'CommentController@approve')->before('auth');
 Route::delete('admin/comments/{id}', 'CommentController@destroy')->before('auth');
 
 
+Route::post('admin/gallery/{id}', array('as' => 'upload', 'uses'=>'GalleryController@uploadImageFile'))->before('auth');
+
+
 Route::resource('admin/gallery', 'GalleryController');
 
 

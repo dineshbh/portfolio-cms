@@ -101,9 +101,10 @@ public function __construct() {
 	 */
 	public function update($id)
 	{
-				// create rules list
+
+		// create rules list
 		$rules = array (
-				'title' => array ('required', 'unique:posts,title'),
+				'title' => array ('required', 'unique:posts,title,'.$id),
 				'category' => array ('required', 'exists:categories,id') 
 			);
 

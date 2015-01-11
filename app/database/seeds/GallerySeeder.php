@@ -18,33 +18,33 @@ class GallerySeeder extends Seeder {
 
         for( $i = 1 ; $i <= 3 ; $i++ )
         {
-            $gallery_image = new Gallery_Image;
+            $gallery_image = new Gallery_Item;
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 1;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/400x400';
+            $gallery_image->image_url = 'http://placehold.it/350x350';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
             $gallery_image->save();
         }
 
         for( $i = 4 ; $i <= 6 ; $i++ )
         {
-            $gallery_image = new Gallery_Image;
+            $gallery_image = new Gallery_Item;
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 2;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/400x400';
+            $gallery_image->image_url = 'http://placehold.it/350x350';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
             $gallery_image->save();
         }
 
         for( $i = 7 ; $i <= 9 ; $i++ )
         {
-            $gallery_image = new Gallery_Image;
+            $gallery_image = new Gallery_Item;
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 3;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/400x400';
+            $gallery_image->image_url = 'http://placehold.it/350x350';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
             $gallery_image->save();
         }

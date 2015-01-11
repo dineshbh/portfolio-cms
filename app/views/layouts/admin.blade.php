@@ -9,9 +9,15 @@
         {{ HTML::style('css/normalize.css') }}
         {{ HTML::style('css/foundation.css') }}
         {{ HTML::style('css/custom.css') }}
+        {{ HTML::style('css/jquery.Jcrop.min.css') }}
+
         {{ HTML::script('js/vendor/modernizr.js')}}
         {{ HTML::script('js/ckeditor/ckeditor.js')}}
-		
+        {{ HTML::script('js/jquery.min.js')}}
+        {{ HTML::script('js/jquery.Jcrop.min.js')}}
+        {{ HTML::script('js/uploader.js')}}
+        {{ HTML::script('js/kceditor.js')}}
+
 </head>
 <body>
   
@@ -37,10 +43,6 @@
       @endif
       @yield('content')  
     </div>
-
-
-
-  
     
   </div>
    
