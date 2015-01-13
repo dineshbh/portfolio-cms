@@ -17,6 +17,7 @@ h3, h3 a{
   font-weight: 700;
   color: #8ac5c3;
   padding-bottom:14px;
+  text-transform: uppercase;
 }
 
 p, a, h4, h5, h6, li {
@@ -55,7 +56,11 @@ h5 {
   background-color: #8ac5c3;
 }
 
-.button .active {
+.button.active {
+  background-color: #bdbdbd;
+}
+
+li.active {
   background-color: #bdbdbd;
 }
 
@@ -76,6 +81,7 @@ ul {
 
 .category a {
   color: white;
+  text-transform: uppercase;
 }
 
 .header {

@@ -22,8 +22,9 @@ class GallerySeeder extends Seeder {
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 1;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/350x350';
+            $gallery_image->image_url = 'http://placehold.it/750x750';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
+            $gallery_image->date = sprintf("%02s",$i) . '-' . sprintf("%02s", $i) . '-01';
             $gallery_image->save();
         }
 
@@ -33,8 +34,9 @@ class GallerySeeder extends Seeder {
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 2;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/350x350';
+            $gallery_image->image_url = 'http://placehold.it/750x750';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
+            $gallery_image->date = sprintf("%02s",$i) . '-' . sprintf("%02s", $i) . '-01';
             $gallery_image->save();
         }
 
@@ -44,8 +46,9 @@ class GallerySeeder extends Seeder {
             $gallery_image->title = "Image no $i";
             $gallery_image->category_id = 3;
             $gallery_image->image_text = $image_text;
-            $gallery_image->image_url = 'http://placehold.it/350x350';
+            $gallery_image->image_url = 'http://placehold.it/750x750';
             $gallery_image->image_link = 'http://www.johnmclachlan.net';
+            $gallery_image->date = sprintf("%02s",$i) . '-' . sprintf("%02s", $i) . '-01';
             $gallery_image->save();
         }
             

@@ -74,7 +74,7 @@ class GalleryController extends \BaseController {
 	{
 		// create rules list
 		$rules = array (
-				'title' => array ('required', 'unique:gallery,title'),
+				'title' => array ('required', 'unique:gallery,title,'.$id),
 				'category' => array ('required', 'exists:gallery_categories,id') 
 			);
 
@@ -88,13 +88,17 @@ class GalleryController extends \BaseController {
 		// save data in database
 		$title = Input::get('title');
 		$category = Input::get('category');
-		$link = Input::get('link');
-		$text = Input::get('text');
+		$link = Input::get('image_link');
+		$text = Input::get('image_text');
+		$month = Input::get('month');
+		$year = Input::get('year');
+		$date = sprintf("%02s",$year) . '-' . sprintf("%02s", $month) . '-01';
 		$galleryitem = Gallery_Item::findOrFail($id);
 		$galleryitem->title = $title;
 		$galleryitem->category_id = $category;
 		$galleryitem->image_link = $link;
 		$galleryitem->image_text = $text;
+		$galleryitem->date = $date;
 		$galleryitem->update();
 		// adds message to laravel $ession object to be retrieved anywhere on the site
 		return Redirect::route('admin.gallery.index')->withMessage('Gallery item was updated!');

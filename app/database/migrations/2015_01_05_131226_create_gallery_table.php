@@ -19,6 +19,7 @@ class CreateGalleryTable extends Migration {
             $table->string('image_link');
             $table->unsignedInteger('category_id')->references('id')->on('gallery_categories');
             $table->text('image_text');
+            $table->date('date');
             $table->timestamps();
             $table->engine = 'MyISAM';
         });
