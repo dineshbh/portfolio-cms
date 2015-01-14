@@ -1,15 +1,4 @@
 <div class="row">
-		<div class="large-9 columns">
-			<div class="image_preview">
-				<a target="_blank" href="{{ asset($galleryitem->image_url) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a>
-			</div>
-			<p>Filename: {{ basename($galleryitem->image_url) }}<p>
-		</div>
-		<div class="large-9 columns">
-			@include ('admin/partials/_admin-uploadform')
-        </div>
-
-	{{ Form::model($galleryitem, array('route' => ['admin.gallery.update', $galleryitem->id], 'method' => 'PUT')) }}
 	<div class="large-7 columns">
 		{{ Form::label('Title') }}
 		{{ Form::text('title') }}
@@ -22,10 +11,15 @@
 		{{ Form::label('Link') }}
 		{{ Form::text('image_link') }}
 	</div>
+	<!-- if date isn't set, set it to current date -->
+	@if(isset($galleryitem->date))
+		<?php $date = explode('-', $galleryitem->date);	?>
+	@else
+		<?php $date = explode('-', date('Y-m-d')); ?>
+	@endif
 	<?php 
-		$date = explode('-', $galleryitem->date);
-		$month = $date[1];
-		$year = $date[0];
+	$month = $date[1];
+	$year = $date[0]; 
 	?>
 	<div class="large-3 columns">
 		{{ Form::label('Month') }}
@@ -40,5 +34,6 @@
 <script type="text/javascript">
 	CKEDITOR.replace('text');
 </script>
-{{ $errors->first('title', '<small class="error">:message</small>'); }}
-{{ $errors->first('category', '<small class="error">:message</small>'); }}
+
+{{ Form::submit('Submit', array('class' => 'button')) }}
+{{ Form::close() }}	

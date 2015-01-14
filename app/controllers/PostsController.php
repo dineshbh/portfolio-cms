@@ -63,21 +63,6 @@ public function __construct() {
 		return Redirect::route('admin.posts.index')->withMessage('Post was created!');
 	}
 
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		$post = Post::findOrFail($id);
-		$categories = Category::all();
-		return View::make('admin.posts.show')->withPost($post)->withCategories($categories);
-	}
-
-
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -137,7 +122,7 @@ public function __construct() {
 	 */
 	public function destroy($id)
 	{
-		$post = POst::findOrFail($id)->delete();
+		$post = Post::findOrFail($id)->delete();
 		return Redirect::route('admin.posts.index')->withMessage('Post was deleted!');
 	}
 

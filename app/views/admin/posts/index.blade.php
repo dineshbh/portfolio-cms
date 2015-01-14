@@ -6,7 +6,7 @@
     <tbody>
         @foreach($posts as $post)
             <tr>
-                <td width = 70%>{{link_to_route('admin.posts.show',$post->title,$post->id)}}</td>
+                <td width = 70%>{{link_to_action('BlogController@show',$post->title,$post->id, array('target'=>'_blank'))}}</td>
                 <td width = 30%>{{link_to_route('post_comments','View Comments',$post->id)}}</td>
                 <td>{{link_to_action('PostsController@edit','Edit',$post->id,['class' => 'tiny button'])}}</td>
                 {{ Form::model($post, array('action' => ['PostsController@destroy', $post->id], 'method' => 'delete')) }}

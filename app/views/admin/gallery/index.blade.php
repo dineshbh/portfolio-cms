@@ -6,7 +6,7 @@
     <tbody>
         @foreach($galleryitems as $galleryitem)
             <tr>
-                <td width = 30%>{{ $galleryitem->title }}</td>
+                <td width = 30%>{{link_to_action('ProjectsController@show',$galleryitem->title, $galleryitem->id, array('target'=>'_blank'))}}</td>
                     @foreach ($categories as $category)
                     @if ($galleryitem->category_id == $category->id)
                         <td width = 30%>{{ $category->category }} </td>

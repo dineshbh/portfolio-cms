@@ -22,7 +22,9 @@ class GalleryController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		$categories = Gallery_Category::lists('category', 'id');
+		$category = array();
+		return View::make('admin.gallery.create')->withCategory($category)->withCategories($categories);
 	}
 
 
@@ -33,21 +35,38 @@ class GalleryController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		// create rules list
+		$rules = array (
+				'title' => array ('required', 'unique:gallery,title'),
+				'category' => array ('required', 'exists:gallery_categories,id') 
+			);
+
+		// use laravel validator class to check if rules are met
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails()) {
+			// redirect and pass errors and input back to view
+			return Redirect::route('admin.gallery.create')->withErrors($validator)->withInput();
+		}
+
+		// save data in database
+		$title = Input::get('title');
+		$category = Input::get('category');
+		$link = Input::get('image_link');
+		$text = Input::get('image_text');
+		$month = Input::get('month');
+		$year = Input::get('year');
+		$date = sprintf("%02s",$year) . '-' . sprintf("%02s", $month) . '-01';
+		$galleryitem = new Gallery_Item();
+		$galleryitem->title = $title;
+		$galleryitem->category_id = $category;
+		$galleryitem->image_link = $link;
+		$galleryitem->image_text = $text;
+		$galleryitem->date = $date;
+		$galleryitem->save();
+
+		// adds message to laravel $ession object to be retrieved anywhere on the site
+		return Redirect::action('GalleryController@edit', array($galleryitem->id))->withMessage('Gallery item was created!');
 	}
-
-
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
 
 	/**
 	 * Show the form for editing the specified resource.
@@ -113,7 +132,8 @@ class GalleryController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$galleryitem = Gallery_Item::findOrFail($id)->delete();
+		return Redirect::route('admin.gallery.index')->withMessage('Gallery Item was deleted!');
 	}
 
 	public function uploadImageFile($id) { // Note: GD library is required for this function
