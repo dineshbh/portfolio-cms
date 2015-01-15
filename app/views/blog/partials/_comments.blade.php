@@ -40,7 +40,13 @@
       <li><article id="comment_<?php echo($comment['id']); ?>" class="hentry">  
         <footer class="post-info">
           <address class="vcard author">
-           <img src="http://placehold.it/100x100">
+          <?php
+          $email = $comment->email;
+          $path = "http://www.gravatar.com/avatar/".md5($email);
+          $default = "mm";
+          $size = 40;
+          ?>
+           <img src="<?php echo $path?>/?d=<?php echo $default?>&s=<?php $size; ?>"/>
           </address>
         </footer>
 

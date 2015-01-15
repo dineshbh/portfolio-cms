@@ -1,5 +1,5 @@
 body {
-  background: url('../img/crossword/crossword/crossword.png');
+  background: url('../img/halftone/halftone/halftone.png');
 }
 
 h1 a {
@@ -12,12 +12,14 @@ h1 {
 }
 
 
-h3, h3 a{
-  font-family: 'Poiret One', cursive;
-  font-weight: 700;
+h2, h3 {
+  font-family: 'Josefin Sans', cursive;
+  font-weight: 500;
+  color: rgb(150, 150, 150);
+}
+
+h2 a, h3 a, h5 a {
   color: #8ac5c3;
-  padding-bottom:14px;
-  text-transform: uppercase;
 }
 
 p, a, h4, h5, h6, li {
@@ -37,6 +39,7 @@ h6 {
 h5 {
   margin-top:6px;
 }
+
 .pagination {
   margin-bottom:24px;
 }
@@ -60,11 +63,11 @@ h5 {
   background-color: #bdbdbd;
 }
 
-li.active {
+.category.active {
   background-color: #bdbdbd;
 }
 
-ul {
+ul.category {
   list-style: none;
   list-style-position: inside;
   margin-left:0;

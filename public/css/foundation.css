@@ -3372,7 +3372,7 @@ ul.pagination {
     color: #222222;
     font-size: 0.875rem;
     margin-left: 0.3125rem; }
-    ul.pagination li a, ul.pagination li button {
+    ul.pagination li {
       display: block;
       padding: 0.0625rem 0.625rem 0.0625rem;
       color: #999999;
@@ -3383,20 +3383,20 @@ ul.pagination {
       line-height: inherit;
       transition: background-color 300ms ease-out; }
     ul.pagination li:hover a,
-    ul.pagination li a:focus, ul.pagination li:hover button,
-    ul.pagination li button:focus {
+    ul.pagination li a:focus, ul.pagination li:hover,
+    ul.pagination li:focus {
       background: #e6e6e6; }
-    ul.pagination li.unavailable a, ul.pagination li.unavailable button {
+    ul.pagination li.disabled a, ul.pagination li.disabled {
       cursor: default;
       color: #999999; }
-    ul.pagination li.unavailable:hover a, ul.pagination li.unavailable a:focus, ul.pagination li.unavailable:hover button, ul.pagination li.unavailable button:focus {
+    ul.pagination li.disabled:hover a, ul.pagination li.disabled a:focus, ul.pagination li.disabled:hover, ul.pagination li.disabled:focus {
       background: transparent; }
-    ul.pagination li.current a, ul.pagination li.current button {
+    ul.pagination li.current a, ul.pagination li.active {
       background: #008cba;
       color: white;
       font-weight: bold;
       cursor: default; }
-      ul.pagination li.current a:hover, ul.pagination li.current a:focus, ul.pagination li.current button:hover, ul.pagination li.current button:focus {
+      ul.pagination li.active a:hover, ul.pagination li.active a:focus, ul.pagination li.active:hover, ul.pagination li.active:focus {
         background: #008cba; }
   ul.pagination li {
     float: left;

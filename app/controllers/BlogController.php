@@ -6,14 +6,22 @@ class BlogController extends \BaseController {
 	{	
 		$categories = Category::all();
 		$posts = Post::orderBy('id','desc')->paginate(5);
-		return View::make('blog.index')->withPosts($posts)->withCategories($categories);
+		foreach($posts as $post)
+		{
+			$commentcount[$post->id] = Comment::where('post_id', $post->id)->count();
+		}
+		return View::make('blog.index')->withPosts($posts)->withCategories($categories)->with('commentcount', $commentcount);
 	}
 
 	public function getByCat($category_id)
 	{
 		$posts = Post::where('category_id', $category_id)->orderBy('id','desc')->paginate(5);
 		$categories = Category::all();
-		return View::make('blog.index')->withPosts($posts)->withCategories($categories);
+		foreach($posts as $post)
+		{
+			$commentcount[$post->id] = Comment::where('post_id', $post->id)->count();
+		}
+		return View::make('blog.index')->withPosts($posts)->withCategories($categories)->with('commentcount', $commentcount);
 	}
 
 	public function show($id) 
