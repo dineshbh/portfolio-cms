@@ -68,8 +68,15 @@ App::error(function(Exception $exception, $code)
 
 App::down(function()
 {
+	// Create ip whitelist to allow access while in maintanence mode
+	$ip = Request::getClientIp();
+    $allowed = array('90.165.241.79');
+
+    if(!in_array($ip, $allowed))
+    {
 	return Response::make("Be right back!", 503);
-});
+	}
+	});
 
 /*
 |--------------------------------------------------------------------------
