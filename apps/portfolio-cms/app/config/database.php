@@ -48,7 +48,7 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'box467.bluehost.com',
+			'host'      => 'localhost',
 			'database'  => 'johnmcl3_portfolio-cms',
 			'username'  => 'johnmcl3_admin',
 			'password'  => 'l1verp00l',
