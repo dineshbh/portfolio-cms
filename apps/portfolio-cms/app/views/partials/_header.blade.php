@@ -1,4 +1,4 @@
-    <div class="large-12 columns header">
+    <div class="large-12 show-for-medium-up columns header">
     <div class"show-for-medium-up">
       <div class="nav-bar right show-for-medium-up">
        <ul class="button-group show-for-medium-up">
