@@ -19,7 +19,6 @@
         
 </head>
 <body>
-<div class="row">
   <div class="row">
     @include('partials._header') 
   </div>
@@ -31,7 +30,6 @@
  </div>
   
     @include('partials._footer') 
-    </div>
   
     
     <script>

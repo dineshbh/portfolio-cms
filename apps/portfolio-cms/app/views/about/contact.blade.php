@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-<div class="large-6 columns">
+<div class="large-6 medium-6 columns">
 <h3>Hi!</h3>
 <p>He trabajado en el Reino Unido en una variedad de proyectos audiovisuales durante un periodo de más de 2 años. Incluyendo un año y medio como el editor principal una productura, montada por el que fue el director regional de la BBC. Desde televisión hasta la víseos corporativos. He tenido experiencia trabajando en cada una de las etapas del proceso de producción, incluyendo investigación, desarrollo, guión, rodajes, edición en línea y fuera de línea y creación de menús de DVD.</p>
 
@@ -12,7 +12,7 @@
 
 <p>Cuento con una gran variedad de conocimientos técnicos, al igual que ideas creativas. Mis títulos en audiovisuales pueden encontrarse en la sección de 'formación' y una selección de los diversos proyectos en que he trabajado durante a lo largo de los años en la sección 'proyectos'.</p>
 </div>
-<div class="large-6 columns">
+<div class="large-6 medium-6 columns">
 <h3>Contact Me</h3>
 {{ Form::open( array ('action' => 'ContactController@getContactUsForm')) }}
 @if (Session::has('message'))

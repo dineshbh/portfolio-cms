@@ -16,24 +16,20 @@
         <link href='http://fonts.googleapis.com/css?family=Poiret+One|Josefin+Sans:300,400,700,300italic,400italic,700italic|Lobster' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="row">
+
   <div class="row">
     @include('partials._header') 
-  </div>
- 
-  <div class="row">
-    <div class="large-9 columns" role="content">
+    </div>
+    <div class="row">
+    <div class="large-9 medium-9 columns" role="content">
         @yield('content')
     </div>
-  
- 
- <aside class="large-3 columns">
-  @include('blog.partials._sidebar')   
- </aside>
- </div>
-  
-    @include('partials._footer') 
+
+    <aside class="large-3 medium-3 columns">
+        @include('blog.partials._sidebar')   
+    </aside>
     </div>
+    @include('partials._footer') 
   
     {{ HTML::script('js/vendor/jquery.js')}}
     {{ HTML::script('js/foundation.min.js')}}

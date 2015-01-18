@@ -25,8 +25,7 @@
       <h3>All Projects</h3>
     @endif
   </div>
-</div>
-<div class="row">
+
   <div class="large-12 columns">
     @foreach ($galleryitems as $galleryitem)
       <div class="large-4 medium-6 small-12 columns">
@@ -40,6 +39,5 @@
       </div>
       @endforeach
     </div>
-  </div>
-</div>
+    </div>
 @stop

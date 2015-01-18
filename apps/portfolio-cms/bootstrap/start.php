@@ -24,12 +24,10 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => ['*.dev'],
-    'production' => ['*.com', '*.net', '*.org']
-
-
+$env = getenv('LARAVEL_ENV') ?: $app->detectEnvironment(array(
+    'local' => array('Laptop', 'Desktop', '*.dev'),
+    'staging' => array('ip-staging'), 
+    'production' => array('*.net', '*.com')
 ));
 
 /*
