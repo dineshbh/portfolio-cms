@@ -11,7 +11,7 @@
     <div class="small-6 medium-6 large-6 text-right columns">
       <h4>Follow Me</h4>
       <ul class="footer-links">
-        <a href="#">GitHub</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a> | <a href="#">Instagram</a>
+        <a href="#">GitHub</a> | <a href="#">Facebook</a> | <a href="#">Twitter</a>
       <ul>
     </div>
   </div>

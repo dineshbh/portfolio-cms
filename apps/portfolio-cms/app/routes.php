@@ -27,8 +27,6 @@ Route::get('projects/category/{category_id}', array('as' => 'project_category', 
 Route::get('about', array('as' => 'about', 'uses'=>'ContactController@getContact'));
 Route::post('about', array('as' => 'about', 'uses'=>'ContactController@getContactUsForm'));
 
-
-
 // ADMIN
 //------------
 

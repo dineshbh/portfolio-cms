@@ -74,7 +74,7 @@ App::down(function()
 
     if(!in_array($ip, $allowed))
     {
-	return Response::make("Be right back!", 503);
+	return Response::view('maintenance', array(), 503);
 	}
 	});
 
