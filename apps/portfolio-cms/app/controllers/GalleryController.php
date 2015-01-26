@@ -57,6 +57,9 @@ class GalleryController extends \BaseController {
 		$year = Input::get('year');
 		$date = sprintf("%02s",$year) . '-' . sprintf("%02s", $month) . '-01';
 		$galleryitem = new Gallery_Item();
+		if (empty($galleryitem->image_url)) {
+			$galleryitem->image_url = 'gallery/no-image.jpg';
+		}
 		$galleryitem->title = $title;
 		$galleryitem->category_id = $category;
 		$galleryitem->image_link = $link;
@@ -113,6 +116,9 @@ class GalleryController extends \BaseController {
 		$year = Input::get('year');
 		$date = sprintf("%02s",$year) . '-' . sprintf("%02s", $month) . '-01';
 		$galleryitem = Gallery_Item::findOrFail($id);
+		if (empty($galleryitem->image_url)) {
+			$galleryitem->image_url = 'gallery/no-image.jpg';
+		}
 		$galleryitem->title = $title;
 		$galleryitem->category_id = $category;
 		$galleryitem->image_link = $link;
