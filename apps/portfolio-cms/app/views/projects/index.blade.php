@@ -27,17 +27,17 @@
   </div>
 
   <div class="large-12 columns">
+  <ul class="large-block-grid-3 medium-block-grid-2">
     @foreach ($galleryitems as $galleryitem)
-      <div class="large-4 medium-6 small-12 columns">
-      
+      <li>
         <a href="{{ action('ProjectsController@show', $galleryitem->id) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a>
 
         <div class="caption">
           <h3>{{ link_to_action('ProjectsController@show', $galleryitem->title, $galleryitem->id) }}</h3>
           <h6 class="subheader">{{ date('M Y', strtotime($galleryitem->date)) }}</h6>
         </div>
-      </div>
+      </li>
       @endforeach
-    </div>
+      </ul>
     </div>
 @stop
