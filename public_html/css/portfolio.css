@@ -49,6 +49,7 @@ h5 {
 
 .nav-bar {
   padding-top:1rem;
+  margin-bottom: 1rem;
 }
 
 .button-group li {
@@ -60,6 +61,7 @@ h5 {
   font-weight: 700;
   padding:0.4rem;
   background-color: #8ac5c3;
+  border-radius: 3px;
 }
 
 .button.active {
@@ -81,8 +83,9 @@ ul.category {
   background-color: #ff9681;
   display: inline-block;
   font-size:0.7rem;
-  padding:0.2rem;
+  padding:0.2rem 0.5rem;
   margin: 0.6rem 0.25rem;
+  border-radius: 3px;
 }
 
 .category a {
@@ -100,6 +103,29 @@ article {
 }
 
 
+.thumb {
+    max-width:100%;
+    height:auto;
+    border-radius: 5px;
+  }
+
+.caption {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+#slider {
+  background-color: white;
+  height: 130px;
+  line-height:130px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.img {
+  vertical-align: middle;
+}
 /* Blog */
 .hentry {
   border-bottom: 1px solid #eee;

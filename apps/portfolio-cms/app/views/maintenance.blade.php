@@ -1,9 +1,9 @@
 @extends('layouts.down')
 @section('content')
 <article>
-    <h1>I&rsquo;ll be back soon!</h1>
+    <h1>¡Volveré pronto!</h1>
     <div>
-        <p>Sorry for the inconvenience but I&rsquo;m performing some maintenance at the moment. I&rsquo;ll be back online shortly!</p>
+        <p>Siento la molestia pero estoy actualizando la página ahora mismo. Estaré online en seguida.</p>
         <p>&mdash; John Mclachlan</p>
     </div>
 </article>

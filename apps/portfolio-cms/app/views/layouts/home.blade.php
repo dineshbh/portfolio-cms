@@ -15,7 +15,9 @@
 
         {{ HTML::script('js/vendor/modernizr.js')}}
         {{ HTML::script('js/vendor/jquery.js')}}
-        {{ HTML::script('js/foundation.min.js')}}       
+        {{ HTML::script('js/foundation.min.js')}}  
+        {{ HTML::script('js/jssor/jssor.js')}}
+        {{ HTML::script('js/jssor/jssor.slider.js')}}
         
 </head>
 <body>

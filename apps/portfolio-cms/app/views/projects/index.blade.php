@@ -32,7 +32,7 @@
       
         <a href="{{ action('ProjectsController@show', $galleryitem->id) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a>
 
-        <div class="panel">
+        <div class="caption">
           <h3>{{ link_to_action('ProjectsController@show', $galleryitem->title, $galleryitem->id) }}</h3>
           <h6 class="subheader">{{ date('M Y', strtotime($galleryitem->date)) }}</h6>
         </div>
