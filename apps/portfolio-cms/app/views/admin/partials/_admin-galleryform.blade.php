@@ -32,7 +32,7 @@
 </div>
 {{ Form::textarea('image_text') }}
 <script type="text/javascript">
-	CKEDITOR.replace('text');
+	CKEDITOR.replace('image_text');
 </script>
 
 {{ Form::submit('Submit', array('class' => 'button')) }}

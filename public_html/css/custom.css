@@ -1,11 +1,11 @@
-.blog_thumb {
-	float: right;
-	margin-bottom: 1rem;
-}
-
 #cke_content {
 	margin-bottom: 1rem;
 }
+
+#cke_image_text {
+  margin-bottom: 1rem;
+}
+
 
 button, .button {
 	margin-bottom: 0rem;
@@ -80,9 +80,3 @@ td p {
 .info {
     font-size: 14px;
 }
-
-.thumb {
-    max-width:100%;
-    height:auto;
-    border-radius: 5px;
-  }
