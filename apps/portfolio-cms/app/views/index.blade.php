@@ -1,6 +1,6 @@
 @extends('layouts.home')
 @section('content')
-		<h2>¡Hola! Soy John. Desarrollo páginas webs y monto videos. En esta web se puede ver proyectos en que he trabajado tanto como mis ultimos pensamientos en mi blog. ¡Echate un vistazo!</h2>
+		<h2>¡Hola! Soy John. Desarrollo páginas webs y monto videos. En esta web se puede ver tanto los proyectos en los que he trabajado como mis últimos pensamientos reflejados en mi blog. ¡Echale un vistazo!</h2>
 		<hr>
 		
 	<div class="large-6 medium-6 columns">
@@ -11,7 +11,7 @@
 	</div>
 
 	<div class="large-6 medium-6 columns">
-	<h3>Mi último blog</h3>
+	<h3>Mi último post</h3>
 	<h3>{{ link_to_action('BlogController@show', $post->title, $post->id) }}</h3>
 	<h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
 	 {{ str_limit($post->content, $limit = 800, $end = '...') }}
@@ -90,7 +90,7 @@
 
 	<hr>
 	<div class="large-6 medium-6 columns">
-	<h3>Tecnologias que ultilizo</h3>
+	<h3>Tecnologías que ultilizo</h3>
 	<p><i class="fi-check"> HTML 5</i></p>
 	<p><i class="fi-check"> CSS 3</i></p>
 	<p><i class="fi-check"> PHP</i></p>
