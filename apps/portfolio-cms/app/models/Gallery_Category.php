@@ -6,7 +6,7 @@ class Gallery_Category extends Eloquent {
 
     public function Gallery_Item()
     {
-        return $this->belongsTo('Gallery_Item');
+        return $this->hasMany('Gallery');
     }
  
 }

@@ -2,7 +2,7 @@
 @section('content')
 @foreach ($posts as $post)
 <article>
-<h3>{{ link_to_route('blog.index', strtoupper($post->title), $post->id) }}</h3>
+<h3>{{ link_to_route('blog.index', $post->title, $post->id) }}</h3>
 <h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
         <div class="row">
           <div class="large-12 columns">

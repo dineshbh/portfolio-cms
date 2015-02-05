@@ -52,11 +52,18 @@ public function __construct() {
 
 		// save data in database
 		$title = Input::get('title');
-		$category = Input::get('category');
+		$category_id = Input::get('category');
+		$new_category = Input::get('new_category');
+		if (!empty($new_category)) {
+			$category = new Category();
+			$category->category = $new_category;
+			$category->save();
+			$category_id = $category->id;
+		}
 		$content = Input::get('content');
 		$post = new Post();
 		$post->title = $title;
-		$post->category_id = $category;
+		$post->category_id = $category_id;
 		$post->content = $content;
 		$post->save();
 		// adds message to laravel $ession object to be retrieved anywhere on the site
@@ -73,7 +80,7 @@ public function __construct() {
 	{
 		$post = Post::findOrFail($id);
 		$categories = Category::lists('category', 'id');
-		$category = $post->category_id;
+		$category = Post::find($id)->category;
 		return View::make('admin.posts.edit')->withPost($post)->withCategory($category)->withCategories($categories);
 	}
 
@@ -102,11 +109,18 @@ public function __construct() {
 
 		// save data in database
 		$title = Input::get('title');
-		$category = Input::get('category');
+		$category_id = Input::get('category');
+		$new_category = Input::get('new_category');
+		if (!empty($new_category)) {
+			$category = new Category();
+			$category->category = $new_category;
+			$category->save();
+			$category_id = $category->id;
+		}
 		$content = Input::get('content');
 		$post = Post::findOrFail($id);
 		$post->title = $title;
-		$post->category_id = $category;
+		$post->category_id = $category_id;
 		$post->content = $content;
 		$post->update();
 		// adds message to laravel $ession object to be retrieved anywhere on the site

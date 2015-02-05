@@ -36,23 +36,25 @@ Route::get('/admin/login', 'AdminController@getLogin');
 Route::post('/admin/login', 'AdminController@postLogin');
 Route::get('/admin/logout', 'AdminController@getLogout');
 
-//Posts
-Route::resource('admin/posts', 'PostsController');
-Route::get('admin/posts', 'PostsController@index')->before('auth');
-
-//Users
-Route::resource('admin/users', 'UserController');
-
 //Comments
+Route::get('admin/comments/', 'CommentController@index')->before('auth');
 Route::get('admin/comments/all/', 'CommentController@index')->before('auth');
 Route::get('admin/comments/{id}', array('as' => 'post_comments', 'uses'=>'CommentController@getByPost'))->before('auth');
 Route::put('admin/comments/{id}', 'CommentController@approve')->before('auth');
 Route::delete('admin/comments/{id}', 'CommentController@destroy')->before('auth');
 
 //Gallery
-Route::resource('admin/gallery', 'GalleryController');
 Route::post('admin/gallery/{id}', array('as' => 'upload', 'uses'=>'GalleryController@uploadImageFile'))->before('auth');
 
+
+// Restful Resource Routes
+Route::group(array('before'=>'auth'), function() {  
+	Route::resource('admin/posts', 'PostsController');
+	Route::resource('admin/users', 'UserController');
+	Route::resource('admin/gallery', 'GalleryController');
+	Route::resource('admin/post-categories', 'PostCategoryController');
+	Route::resource('admin/gallery-categories', 'GalleryCategoryController');
+});
 
 //Debugging
 // listens for any query passed to database for debugging

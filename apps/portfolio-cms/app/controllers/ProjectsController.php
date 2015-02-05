@@ -16,7 +16,7 @@ class ProjectsController extends \BaseController {
 
 	public function getByCat($category_id)
 	{
-		$galleryitems = Gallery_Item::where('category_id', $category_id)->orderBy('id','desc')->get();
+		$galleryitems = Gallery_Item::where('category_id', $category_id)->orderBy('date','desc')->get();
 		$categories = Gallery_Category::all();
 		$selectedCategory = Gallery_Category::findOrFail($category_id);
 		return View::make('projects.index')->with('galleryitems', $galleryitems)->withCategories($categories)->with('selectedCategory', $selectedCategory);

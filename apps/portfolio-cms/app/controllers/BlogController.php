@@ -4,8 +4,8 @@ class BlogController extends \BaseController {
 
 	public function index()
 	{	
-		$categories = Category::all();
-		$posts = Post::orderBy('id','desc')->paginate(5);
+		$posts = Post::orderBy('created_at','desc')->paginate(5);
+		$categories = Category::has('post')->get();
 		foreach($posts as $post)
 		{
 			$commentcount[$post->id] = Comment::where('post_id', $post->id)->count();
@@ -16,7 +16,7 @@ class BlogController extends \BaseController {
 	public function getByCat($category_id)
 	{
 		$posts = Post::where('category_id', $category_id)->orderBy('id','desc')->paginate(5);
-		$categories = Category::all();
+		$categories = Category::has('post')->get();
 		foreach($posts as $post)
 		{
 			$commentcount[$post->id] = Comment::where('post_id', $post->id)->count();
@@ -28,7 +28,7 @@ class BlogController extends \BaseController {
 	{
 		$comments = Comment::where('post_id', $id)->where('approved', 1)->orderBy('created_at', 'desc')->get();
 		$posts = Post::where('id', $id)->get();
-		$categories = Category::all();
+		$categories = Category::has('post')->get();
 		return View::make('blog.single')->withPosts($posts)->withCategories($categories)->withComments($comments);
 	}
 

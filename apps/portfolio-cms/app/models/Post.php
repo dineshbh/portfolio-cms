@@ -9,7 +9,7 @@ class Post extends Eloquent {
 
     public function category()
     {
-        return $this->hasOne('Category');
+        return $this->belongsTo('Category');
     }
  
 }

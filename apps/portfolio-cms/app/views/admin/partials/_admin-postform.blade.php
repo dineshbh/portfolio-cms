@@ -1,11 +1,15 @@
 <div class="row">
-<div class="large-9 columns">
+<div class="large-12 columns">
 {{ Form::label('Title') }}
 {{ Form::text('title') }}
 </div>
-<div class="large-3 columns">
-{{ Form::label('Category') }}
-{{ Form::select('category', [0=>'Select a category'] + $categories, $category) }}
+<div class="large-6 columns">
+{{ Form::label('Use Previous Category') }}
+{{ Form::select('category', [0=>'Select a category'] + $categories, $category->id) }}
+</div>
+<div class="large-6 columns">
+{{ Form::label('Create New Category') }}
+{{ Form::text('new_category') }}
 </div>
 </div>
 {{ Form::textarea('content') }}
