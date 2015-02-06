@@ -137,6 +137,8 @@ public function __construct() {
 	public function destroy($id)
 	{
 		$post = Post::findOrFail($id)->delete();
+		// Find a way to automatically delete all comments asocciated with a post
+		$comments = Comment::where('post_id', '=', $id)->delete();
 		return Redirect::route('admin.posts.index')->withMessage('Post was deleted!');
 	}
 
