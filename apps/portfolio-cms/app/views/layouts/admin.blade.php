@@ -16,7 +16,7 @@
         {{ HTML::script('js/jquery.min.js')}}
         {{ HTML::script('js/jquery.Jcrop.min.js')}}
         {{ HTML::script('js/uploader.js')}}
-        {{ HTML::script('js/kceditor.js')}}
+        {{ HTML::script('js/ckeditor.js')}}
 
 </head>
 <body>

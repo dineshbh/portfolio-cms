@@ -25,7 +25,7 @@ public function __construct() {
 	public function create()
 	{
 		$categories = Category::lists('category', 'id');
-		$category = array();
+		$category = new Category();
 		return View::make('admin.posts.create')->withCategory($category)->withCategories($categories);
 	}
 
@@ -40,7 +40,7 @@ public function __construct() {
 		// create rules list
 		$rules = array (
 				'title' => array ('required', 'unique:posts,title'),
-				'category' => array ('required', 'exists:categories,id') 
+				'category' => array ('required') 
 			);
 
 		// use laravel validator class to check if rules are met
@@ -97,7 +97,7 @@ public function __construct() {
 		// create rules list
 		$rules = array (
 				'title' => array ('required', 'unique:posts,title,'.$id),
-				'category' => array ('required', 'exists:categories,id') 
+				'category' => array ('required') 
 			);
 
 		// use laravel validator class to check if rules are met
