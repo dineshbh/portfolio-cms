@@ -59,5 +59,5 @@ Route::group(array('before'=>'auth'), function() {
 //Debugging
 // listens for any query passed to database for debugging
 Event::listen('illuminate.query', function($query) {
-	//var_dump($query);
+	var_dump($query);
 });
