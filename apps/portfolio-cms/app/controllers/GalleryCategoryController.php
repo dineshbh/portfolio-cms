@@ -13,7 +13,7 @@ public function __construct() {
 	public function index()
 	{
 	
-		$usedcategories = DB::table('gallery_categories')->join('gallery', 'gallery_categories.id', '=', 'gallery.category_id')->select(array('gallery_categories.id', 'gallery_categories.category'))->distinct()->paginate(10);
+		$usedcategories = DB::table('gallery_categories')->join('gallery', 'gallery_categories.id', '=', 'gallery.category_id')->select(DB::raw('count(*) as order_count, gallery_categories.id, gallery_categories.category'))->groupBy('gallery_categories.id')->paginate(10);
 		$unusedcategories = DB::table('gallery_categories')->leftjoin('gallery', 'gallery_categories.id', '=', 'gallery.category_id')->whereNull('gallery.category_id')->select(array('gallery_categories.id', 'gallery_categories.category'))->paginate(10);
 		return View::make('admin.gallery-categories.index')->with('usedcategories', $usedcategories)->with('unusedcategories', $unusedcategories);
 	}
