@@ -1,5 +1,12 @@
 @extends('layouts.blog')
 @section('content')
+@if(!empty($currentcategory))
+@foreach ($currentcategory as $category)
+    <h2>{{ link_to_action('BlogController@getByCat', ($category->category), $category->id) }}</h2>
+@endforeach
+@else
+  <h2>{{ link_to_action('BlogController@index', 'All Posts') }}</h2>
+@endif
 {{ $posts->links() }}
 @foreach ($posts as $post)
 <article>
@@ -7,19 +14,17 @@
   <h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
         <div class="row">
           <div class="large-12 columns">
-            {{ str_limit($post->content, $limit = 800, $end = '...') }}
+            {{ first_paragraph($post->content) }}
           </div>  
           <div class="large-12 columns">
-            {{ link_to_action('BlogController@show', $commentcount[$post->id] . ' comments', $post->id) }}
+          <p>{{ link_to_action('BlogController@show', 'Leer más >', $post->id, array('class'=>'button'))}}</p>
+          <p><i class="fi-comment"></i>
+            {{ link_to_action('BlogController@show', $commentcount[$post->id] . ' comments', $post->id) }}</p>
             <ul>
-             @foreach ($categories as $category)
-            @if ($category->id == $post->category_id)
-              <li class="category"><a href="#">{{ strtoupper($category->category) }}</a></li>
-            @endif
-          @endforeach
           </ul>
           </div>
-        </div>
+        </div>   
     </article>
+    <hr>
 @endforeach
 @stop

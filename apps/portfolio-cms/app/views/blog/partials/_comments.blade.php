@@ -34,7 +34,7 @@
 
 <ol id="posts-list">
   @if ($comments->isEmpty())
-  <li class="no-comments">Be the first to add a comment.</li>
+  <li class="no-comments">Ser el primero en comentar.</li>
   @else
     @foreach ($comments as $comment)
       <li><article id="comment_<?php echo($comment['id']); ?>" class="hentry">  

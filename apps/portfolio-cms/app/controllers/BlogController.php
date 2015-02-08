@@ -17,11 +17,12 @@ class BlogController extends \BaseController {
 	{
 		$posts = Post::where('category_id', $category_id)->orderBy('id','desc')->paginate(5);
 		$categories = Category::has('post')->get();
+		$currentcategory = Category::where('id', $category_id)->get();
 		foreach($posts as $post)
 		{
 			$commentcount[$post->id] = Comment::where('post_id', $post->id)->count();
 		}
-		return View::make('blog.index')->withPosts($posts)->withCategories($categories)->with('commentcount', $commentcount);
+		return View::make('blog.index')->withPosts($posts)->withCategories($categories)->with('commentcount', $commentcount)->with('currentcategory', $currentcategory);
 	}
 
 	public function show($id) 

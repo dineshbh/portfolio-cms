@@ -4,16 +4,17 @@ body {
 
 h1 a {
   font-family: 'Lobster', cursive;
-  color: #8ac5c3;
 }
 
+a {
+  color:#8ac5c3;
+}
 
 .mobile {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-
 
 h2, h3 {
   font-family: 'Josefin Sans', cursive;
@@ -52,16 +53,13 @@ h5 {
   margin-bottom: 1rem;
 }
 
-.button-group li {
-  margin-right: 0.6rem;
-}
-
 .button {
   font-family: 'Poiret One', cursive;
   font-weight: 700;
   padding:0.4rem;
   background-color: #8ac5c3;
   border-radius: 3px;
+  margin: 4px;
 }
 
 .button.active {
@@ -75,8 +73,12 @@ h5 {
 ul.category {
   list-style: none;
   list-style-position: inside;
-  margin-left:0;
+  margin-left:0px;
   margin-bottom:16px;
+}
+
+ul {
+  margin-left: 0;
 }
 
 .category {
@@ -277,3 +279,10 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
 #posts-list {
   margin-top: 2rem;
 }
+
+.fi-comment {
+   color: #8ac5c3;
+   font-size: 1.2rem;
+}
+
+hr:last-child {display:none;}
