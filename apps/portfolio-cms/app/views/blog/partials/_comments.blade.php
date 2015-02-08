@@ -4,7 +4,7 @@
   {{{ Session::get('message') }}}
   </div>
 @endif
-  <h3>Leave a Comment</h3>
+  <h3>Deja un comentario</h3>
   {{ Form::open( array ('action' => 'BlogController@store')) }}
   <div class="row">
     <div class="large-6 columns">
