@@ -8,15 +8,15 @@
   {{ Form::open( array ('action' => 'BlogController@store')) }}
   <div class="row">
     <div class="large-6 columns">
-      {{ Form::label('Name') }}
+      {{ Form::label('Nombre*') }}
       {{ Form::text('commenter') }}
     </div>
     <div class="large-6 columns">
-      {{ Form::label('email') }}
+      {{ Form::label('Email*') }}
       {{ Form::text('email') }}
     </div>
     <div class="large-12 columns">
-      {{ Form::label('comment') }}
+      {{ Form::label('Comentario*') }}
       {{ Form::textarea('comment', null, ['size' => '30x5']) }}
       <script type="text/javascript">
         CKEDITOR.replace( 'comment', {
@@ -26,7 +26,7 @@
         } );
       </script>
       {{ Form::hidden('post_id', $post->id) }}
-      {{ Form::submit('Create', array('class' => 'button')) }}
+      {{ Form::submit('Enviar', array('class' => 'button')) }}
       {{ Form::close() }}
     </div>
   </div>
