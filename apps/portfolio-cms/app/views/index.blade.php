@@ -14,7 +14,7 @@
 	<h3>Mi último post</h3>
 	<h3>{{ link_to_action('BlogController@show', $post->title, $post->id) }}</h3>
 	<h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
-	 {{ str_limit($post->content, $limit = 800, $end = '...') }}
+     {{ first_paragraph($post->content) }}
 	</div>
 
 	<hr>
