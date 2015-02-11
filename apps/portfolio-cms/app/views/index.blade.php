@@ -5,7 +5,8 @@
 		
 	<div class="large-6 medium-6 columns">
 	<h3>Mi último proyecto</h3>
-	 <a href="{{ action('ProjectsController@show', $galleryitem->id) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a>
+    <div class="overlay">
+	 <a href="{{ action('ProjectsController@show', $galleryitem->id) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a></div>
 	 <h3>{{ link_to_action('ProjectsController@show', $galleryitem->title, $galleryitem->id) }}</h3>
 	 <h6 class="subheader">{{ date('M Y', strtotime($galleryitem->date)) }}</h6>
 

@@ -1,47 +1,7 @@
+/*********** DIVS ************/
+
 body {
   background: url('../img/halftone/halftone/halftone.png');
-}
-
-h1 a {
-  font-family: 'Lobster', cursive;
-}
-
-a {
-  color:#8ac5c3;
-}
-
-.mobile {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-h2, h3 {
-  font-family: 'Josefin Sans', cursive;
-  font-weight: 500;
-  color: rgb(150, 150, 150);
-}
-
-h2 a, h3 a, h5 a {
-  color: #8ac5c3;
-}
-
-p, a, h4, h5, h6, li {
-  font-family: 'Josefin Sans', cursive;
-  line-height:24px;
-}
-
-p {
-  margin-bottom:1.5rem;
-}
-
-h6 {
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-h5 {
-  margin-top:6px;
 }
 
 .pagination {
@@ -82,7 +42,7 @@ ul {
 }
 
 .category {
-  background-color: #ff9681;
+  background-color: rgb(255,150,129);
   display: inline-block;
   font-size:0.7rem;
   padding:0.2rem 0.5rem;
@@ -95,6 +55,10 @@ ul {
   text-transform: uppercase;
 }
 
+.category:hover {
+  background-color: rgb(255,100,80);
+}
+
 .header {
   height: 72px;
   margin-bottom: 24px;
@@ -104,12 +68,28 @@ article {
   margin-bottom:24px;
 }
 
-
 .thumb {
-    max-width:100%;
-    height:auto;
-    border-radius: 5px;
+  max-width:100%;
+  height:auto;
+  border-radius: 5px;
   }
+
+.overlay img {
+  filter: brightness(100%);
+  -webkit-filter: brightness(100%);
+  -moz-filter: brightness(100%);
+  -o-filter: brightness(100%);
+  -ms-filter: brightness(100%);
+  transition-duration: 1s;
+}
+
+.overlay img:hover {
+  filter: brightness(70%);
+  -webkit-filter: brightness(70%);
+  -moz-filter: brightness(70%);
+  -o-filter: brightness(70%);
+  -ms-filter: brightness(70%);
+}
 
 .caption {
   padding: 20px;
@@ -128,7 +108,49 @@ article {
 .img {
   vertical-align: middle;
 }
-/* Blog */
+
+
+
+/*********** TEXT ************/
+
+h1 a {
+  font-family: 'Lobster', cursive;
+}
+
+a {
+  color:#8ac5c3;
+}
+
+h2, h3 {
+  font-family: 'Josefin Sans', cursive;
+  font-weight: 500;
+  color: rgb(150, 150, 150);
+}
+
+h2 a, h3 a, h5 a {
+  color: #8ac5c3;
+}
+
+p, a, h4, h5, h6, li {
+  font-family: 'Josefin Sans', cursive;
+  line-height:24px;
+}
+
+p {
+  margin-bottom:1.5rem;
+}
+
+h6 {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+h5 {
+  margin-top:6px;
+}
+
+
+/*********** Blog Posts*************/
 .hentry {
   border-bottom: 1px solid #eee;
   padding: 1.5em 0;
@@ -188,8 +210,7 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
   #about-author .photo {border: 1px solid #ddd; float: left; margin: 5px 1em 0 0;}
 
 
-/* Comments */
-
+/********** Comments ***********/
 #comments-list {list-style: none; margin: 0 1em;}
 #comments-list blockquote {
   background: #f8f8f8;
@@ -285,4 +306,12 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
    font-size: 1.2rem;
 }
 
+
+/********* Mobile Adjustments **********/
 hr:last-child {display:none;}
+
+.mobile {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
