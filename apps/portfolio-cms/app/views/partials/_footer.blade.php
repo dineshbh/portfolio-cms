@@ -11,7 +11,7 @@
     <div class="small-6 medium-6 large-6 text-right columns">
       <h4>Sigueme</h4>
       <ul class="footer-links">
-        <a href="https://github.com/johnmcl81">GitHub</a> | <a href="https://www.facebook.com/j.d.mclachlan">Facebook</a> | <a href="https://twitter.com/john_mclachlan">Twitter</a> | <a href="es.linkedin.com/in/johnmclachlan">Linked In</a>
+        <a href="https://github.com/johnmcl81">GitHub</a> | <a href="https://www.facebook.com/j.d.mclachlan">Facebook</a> | <a href="https://twitter.com/john_mclachlan">Twitter</a> | <a href="https://es.linkedin.com/in/johnmclachlan">Linked In</a>
       <ul>
     </div>
   </div>
