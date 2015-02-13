@@ -110,7 +110,6 @@ article {
 }
 
 
-
 /*********** TEXT ************/
 
 h1 a {
@@ -306,6 +305,14 @@ li:last-child .hentry, #content > .hentry {border: 0; margin: 0;}
    font-size: 1.2rem;
 }
 
+.fi-social-github, .fi-social-facebook, .fi-social-twitter, .fi-social-linkedin{
+  color: #BDBDBD;
+   font-size: 2rem;
+}
+
+.fi-social-github:hover, .fi-social-facebook:hover, .fi-social-twitter:hover, .fi-social-linkedin:hover{
+  color: #565656;
+}
 
 /********* Mobile Adjustments **********/
 hr:last-child {display:none;}

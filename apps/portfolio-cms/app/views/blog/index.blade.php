@@ -9,7 +9,7 @@
 {{ $posts->links() }}
 @foreach ($posts as $post)
 <article>
-	<h3>{{ link_to_action('BlogController@show', $post->title, $post->id) }}</h3>
+	<h2>{{ link_to_action('BlogController@show', $post->title, $post->id) }}</h2>
   <h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
         <div class="row">
           <div class="large-12 columns">

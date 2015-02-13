@@ -4,7 +4,7 @@
 		<hr>
 		
 	<div class="large-6 medium-6 columns">
-	<h3>Mi último proyecto</h3>
+	<h2>Mi último proyecto</h2>
     <div class="overlay">
 	 <a href="{{ action('ProjectsController@show', $galleryitem->id) }}">{{ HTML::image($galleryitem->image_url, $galleryitem->image_link, array('class' => 'thumb'))}}</a></div>
 	 <h3>{{ link_to_action('ProjectsController@show', $galleryitem->title, $galleryitem->id) }}</h3>
@@ -14,7 +14,7 @@
 	</div>
 
 	<div class="large-6 medium-6 columns">
-	<h3>Mi último post</h3>
+	<h2>Mi último post</h2>
 	<h3>{{ link_to_action('BlogController@show', $post->title, $post->id) }}</h3>
 	<h6>{{{ date("jS M Y", strtotime($post->created_at)) }}}</h6>
      {{ first_paragraph($post->content) }}

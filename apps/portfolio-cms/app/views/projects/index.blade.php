@@ -27,6 +27,7 @@
   </div>
 
   <div class="large-12 columns">
+  {{ $galleryitems->links() }}
   <ul class="large-block-grid-3 medium-block-grid-2">
     @foreach ($galleryitems as $galleryitem)
       <li><div class="overlay">
