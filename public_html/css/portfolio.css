@@ -26,9 +26,8 @@ body {
   background-color: #bdbdbd;
 }
 
-.category.active, .category.active:hover{
+.category.active {
   background-color: #bdbdbd;
-  pointer-events: none;
 }
 
 ul.category {
