@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>John McLachlan | Portfolio</title>
+	<title>John McLachlan | Portafolio</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- Uses laravel facade to add scripts and css
         with the correctr root relative paths -->
